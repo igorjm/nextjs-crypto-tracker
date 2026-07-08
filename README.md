@@ -1,79 +1,70 @@
 # Crypto Tracker
 
-This is a simple Crypto Currency Track App, fetching data from a free API.
+A modern cryptocurrency markets tracker built with **Next.js App Router**, **TypeScript**, and **Tailwind CSS**. Browse the top coins by market cap, search by name or symbol, and open a detail view with key stats — all powered by the [CoinGecko](https://www.coingecko.com/) API.
 
-## Getting Started
+**Live demo:** [nextjs-crypto-tracker-rho.vercel.app](https://nextjs-crypto-tracker-rho.vercel.app/)
 
-You can download the project or use
+## Features
 
-```
-git clone git@github.com:igorjm/nextjs-crypto-tracker.git
-```
+- Top 50 markets with price, 24h change, volume, and market cap
+- Instant client-side search by name or ticker
+- Coin detail page with ATH/ATL, circulating supply, and 24h range
+- Loading skeletons, empty search state, and error recovery
+- Dark, dense UI with accessibility-minded structure
+
+## Tech stack
+
+- [Next.js 15](https://nextjs.org/) (App Router)
+- React 19 + TypeScript
+- Tailwind CSS v4
+- CoinGecko public API
+
+## Getting started
 
 ### Prerequisites
 
-You will need to have NodeJS installed. Click [here](https://nodejs.org/en/download/) for download instruction.
+- Node.js 18.18+ (Node 20+ recommended)
 
-### Installing
+### Install
 
-For installation you can run
-
-```
+```bash
+git clone https://github.com/igorjm/nextjs-crypto-tracker.git
+cd nextjs-crypto-tracker
 npm install
 ```
 
-or
+### Develop
 
-```
-yarn
-```
-
-## Running the project
-
-To run tests
-
-```
+```bash
 npm run dev
 ```
 
-or
+Open [http://localhost:3000](http://localhost:3000).
 
-```
-yarn dev
-```
+### Production build
 
-## Running the tests
-
-To run tests
-
-```
-npm run test
+```bash
+npm run build
+npm start
 ```
 
-or
+## Project structure
 
+```text
+app/                 # App Router layouts, pages, loading/error states
+components/          # Markets table, search, header, detail UI
+lib/                 # CoinGecko client + number formatters
+public/              # Static assets
 ```
-yarn run test
-```
 
-## Built With
+## API notes
 
-- NextJS
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-## Authors
-
-- **Igor Melo** - [igorjm](https://github.com/igorjm)
+Market and coin data are fetched server-side from CoinGecko. The home page is rendered dynamically so rate limits during build do not bake in an empty state. No API key is required for the public endpoints used here; heavy usage may hit CoinGecko rate limits.
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+MIT — see [LICENSE](LICENSE).
 
-## Acknowledgments
+## Author
 
-- This project is inspired by the [Brian Design](https://www.youtube.com/channel/UCsKsymTY_4BYR-wytLjex7A/videos)
-
-## This application is deployed in
-
-https://nextjs-crypto-tracker-rho.vercel.app/
+**Igor Melo** — [igorjm](https://github.com/igorjm)
